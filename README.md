@@ -15,6 +15,8 @@ To install the package, run the following command:
 npm install welcomerpackage
 ```
 
+- **NPM** : [URL](https://www.npmjs.com/package/welcomerpackage)
+
 ## Function: sendWelcomeMessage
 
 The `sendWelcomeMessage` function is used to send a customized welcome message to a new member joining your Discord server.
