@@ -38,9 +38,8 @@ The `WelcomeMessageOptions` interface allows you to customize the welcome messag
 ### Example
 
 ```typescript
-import { Client, GatewayIntentBits } from 'discord.js';
-import { sendWelcomeMessage } from 'welcomerpackage';
-import { WelcomeMessageOptions } from 'welcomerpackage/types';
+const { Client, GatewayIntentBits } = require('discord.js');
+const { sendWelcomeMessage } = require('welcomerpackage');
 
 // Create a new client instance
 const client = new Client({
@@ -50,13 +49,17 @@ const client = new Client({
   ],
 });
 
+client.once('ready', () => {
+  console.log('Ready!');
+}); 
+
 client.on('guildMemberAdd', (member) => {
-  const options: WelcomeMessageOptions = {
+  const options = {
     title: 'Welcome to our server!',
     description: 'We hope you enjoy your stay.',
     thumbnailUrl: 'https://example.com/welcome.png',
     color: '#00ff00',
-    channelId: '123456789012345678' // Replace with your channel ID
+    channelId: '901930329089130511' // Replace with your channel ID
   };
 
   sendWelcomeMessage(member, options);
