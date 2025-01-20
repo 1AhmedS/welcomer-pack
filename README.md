@@ -12,7 +12,7 @@ Welcome to the Discord Welcome Package! This package is designed to help you eas
 To install the package, run the following command:
 
 ```bash
-npm install welcomer-pack
+npm install welcomerpackage
 ```
 
 ## Function: sendWelcomeMessage
@@ -32,13 +32,15 @@ The `WelcomeMessageOptions` interface allows you to customize the welcome messag
 - `title` (string): The title of the embed. Default is `Welcome!`.
 - `description` (string): The description of the embed. Default is `Welcome to the server, {username}!`.
 - `thumbnailUrl` (string): The URL of the thumbnail image. Default is the user's avatar URL.
+- `channelId` (string): The ID of the channel where the welcome message will be sent. Default is the system channel.
+
 
 ### Example
 
 ```typescript
 import { Client, GatewayIntentBits } from 'discord.js';
-import { sendWelcomeMessage } from 'welcomer-pack';
-import { WelcomeMessageOptions } from 'welcomer-pack/types';
+import { sendWelcomeMessage } from 'welcomerpackage';
+import { WelcomeMessageOptions } from 'welcomerpackage/types';
 
 // Create a new client instance
 const client = new Client({
@@ -48,22 +50,19 @@ const client = new Client({
   ],
 });
 
-// Event listener for when a new member joins the server
 client.on('guildMemberAdd', (member) => {
-  // Define the options for the welcome message embed
   const options: WelcomeMessageOptions = {
-    color: '#ff0000', // The color of the embed
-    title: 'Hello!', // The title of the embed
-    description: `We're glad to have you, ${member.user.username}!`, // The description of the embed
-    thumbnailUrl: 'https://example.com/welcome.png', // The URL of the thumbnail image
+    title: 'Welcome to our server!',
+    description: 'We hope you enjoy your stay.',
+    thumbnailUrl: 'https://example.com/welcome.png',
+    color: '#00ff00',
+    channelId: '123456789012345678' // Replace with your channel ID
   };
 
-  // Send the welcome message
   sendWelcomeMessage(member, options);
 });
 
-// Log in to Discord with your bot token
-client.login('YOUR_BOT_TOKEN');
+client.login('your-bot-token'); // Replace with your bot token
 ```
 ## Contact 
 

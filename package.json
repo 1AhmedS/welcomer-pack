@@ -1,17 +1,17 @@
 {
-  "name": "welcomer-pack",
+  "name": "welcomerpackage",
   "version": "1.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "repository": {
-    "url": "https://github.com/1AhmedS/welcomer-pack"
+    "url": "https://github.com/1AhmedS/welcomerpackage"
   },
   "scripts": {
     "build": "tsup"
   },
   "keywords": [
-    "welcomer-pack",
+    "welcomerpackage",
     "discord-welcome",
     "embedmessage",
     "discord.js",

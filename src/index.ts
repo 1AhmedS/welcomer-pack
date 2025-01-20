@@ -2,7 +2,9 @@ import { GuildMember, EmbedBuilder, TextChannel, ColorResolvable } from 'discord
 import { WelcomeMessageOptions } from './types';
 
 export function sendWelcomeMessage(member: GuildMember, options: WelcomeMessageOptions = {}) {
-  const channel = member.guild.systemChannel as TextChannel;
+  const channel = options.channelId 
+    ? (member.guild.channels.cache.get(options.channelId) as TextChannel) 
+    : (member.guild.systemChannel as TextChannel);
   if (!channel) return;
 
   const color: ColorResolvable = options.color || '#0099ff';
