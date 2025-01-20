@@ -1,0 +1,32 @@
+{
+  "name": "welcomer-pack",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "url": "https://github.com/1AhmedS/welcomer-pack"
+  },
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "welcomer-pack",
+    "discord-welcome",
+    "embedmessage",
+    "discord.js",
+    "discord",
+    "bot"
+  ],
+  "author": "AhmedSamir(1ahmeds)",
+  "license": "MIT",
+  "type": "commonjs",
+  "description": "First Step To Do all the things",
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "discord.js": "^14.17.3"
+  }
+}
