@@ -1,6 +1,6 @@
 {
   "name": "welcomerpackage",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -16,12 +16,22 @@
     "embedmessage",
     "discord.js",
     "discord",
-    "bot"
+    "bot",
+    "welcome-message",
+    "discord-bot",
+    "guild-member",
+    "custom-welcome",
+    "welcome-embed",
+    "discord-welcomer",
+    "discord-greetings",
+    "new-member",
+    "discord-automation",
+    "discord-utilities"
   ],
   "author": "AhmedSamir(1ahmeds)",
   "license": "MIT",
   "type": "commonjs",
-  "description": "First Step To Do all the things",
+  "description": "A package to send customized welcome messages to new members joining your Discord server using discord.js.",
   "devDependencies": {
     "tsup": "^8.3.5",
     "typescript": "^5.7.3"

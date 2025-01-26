@@ -1,5 +1,5 @@
 import { GuildMember, EmbedBuilder, TextChannel, ColorResolvable } from 'discord.js';
-import { WelcomeMessageOptions } from './types';
+import { WelcomeMessageOptions, CustomImageURLOptions } from './types';
 
 export function sendWelcomeMessage(member: GuildMember, options: WelcomeMessageOptions = {}) {
   const channel = options.channelId 
@@ -13,7 +13,8 @@ export function sendWelcomeMessage(member: GuildMember, options: WelcomeMessageO
     .setColor(color)
     .setTitle(options.title || 'Welcome!')
     .setDescription(options.description || `Welcome to the server, ${member.user.username}!`)
-    .setThumbnail(options.thumbnailUrl || member.user.displayAvatarURL())
+    .setThumbnail(options.thumbnailUrl || member.user.displayAvatarURL({ dynamic: true } as CustomImageURLOptions))
+    .setImage(options.imageUrl || '')
     .setTimestamp();
 
   channel.send({ embeds: [welcomeEmbed] });

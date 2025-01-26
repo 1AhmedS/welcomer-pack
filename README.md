@@ -1,4 +1,4 @@
-# Discord Welcome Package
+# Discord Welcome Package V1.0.2
 
 Welcome to the Discord Welcome Package! This package is designed to help you easily send customized welcome messages to new members joining your Discord server using `discord.js`.
 
@@ -14,8 +14,6 @@ To install the package, run the following command:
 ```bash
 npm install welcomerpackage
 ```
-
-- **NPM** : [URL](https://www.npmjs.com/package/welcomerpackage)
 
 ## Function: sendWelcomeMessage
 
@@ -35,15 +33,16 @@ The `WelcomeMessageOptions` interface allows you to customize the welcome messag
 - `description` (string): The description of the embed. Default is `Welcome to the server, {username}!`.
 - `thumbnailUrl` (string): The URL of the thumbnail image. Default is the user's avatar URL.
 - `channelId` (string): The ID of the channel where the welcome message will be sent. Default is the system channel.
+- `imageUrl` (string): The URL of the image to be included in the embed.
 
 
 ### Example
 
 ```typescript
-const { Client, GatewayIntentBits } = require('discord.js');
-const { sendWelcomeMessage } = require('welcomerpackage');
+import { Client, GatewayIntentBits } from 'discord.js';
+import { sendWelcomeMessage } from 'welcomer-pack';
+import { WelcomeMessageOptions } from 'welcomer-pack/types';
 
-// Create a new client instance
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -51,23 +50,20 @@ const client = new Client({
   ],
 });
 
-client.once('ready', () => {
-  console.log('Ready!');
-}); 
-
 client.on('guildMemberAdd', (member) => {
-  const options = {
+  const options: WelcomeMessageOptions = {
     title: 'Welcome to our server!',
     description: 'We hope you enjoy your stay.',
     thumbnailUrl: 'https://example.com/welcome.png',
     color: '#00ff00',
-    channelId: '901930329089130511' // Replace with your channel ID
+    channelId: '123456789012345678', 
+    imageUrl: 'https://example.com/image.png' 
   };
 
   sendWelcomeMessage(member, options);
 });
 
-client.login('your-bot-token'); // Replace with your bot token
+client.login('your-bot-token'); 
 ```
 ## Contact 
 
